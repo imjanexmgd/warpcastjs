@@ -34,14 +34,14 @@ const profileDetail = async () => {
       throw error;
    }
 };
-const listService = ['Follow Channel by User'];
+const listService = ['Follow Channel by Fid'];
 (async () => {
    try {
       process.stdout.write('\x1Bc');
       const profile = await profileDetail();
       console.log('\n');
       const { token, user } = profile;
-      await followChannelbyUser(token, user);
+      await followChannelbyFid(token, user);
       return;
       const { service } = await inquirer.prompt({
          type: 'list',
@@ -49,7 +49,7 @@ const listService = ['Follow Channel by User'];
          name: 'service',
          choices: listService,
       });
-      if (service == 'Follow Channel by User') {
+      if (service == 'Follow Channel by Fid') {
          await followChannelbyFid(token, user);
       }
    } catch (error) {
