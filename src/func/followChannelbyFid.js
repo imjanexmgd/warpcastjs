@@ -49,7 +49,7 @@ const processGetFollowingChannel = async (token, fid) => {
       throw error;
    }
 };
-const followChannelbyUser = async (token, user) => {
+const followChannelbyFid = async (token, user) => {
    try {
       process.stdout.write('\x1Bc');
       console.log(
@@ -109,4 +109,4 @@ const followChannelbyUser = async (token, user) => {
       throw error;
    }
 };
-export default followChannelbyUser;
+export default followChannelbyFid;

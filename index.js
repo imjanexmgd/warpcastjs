@@ -2,7 +2,7 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import getMe from './src/warpcast/getMe.js';
 import { loggerSuccess } from './src/utils/logger.js';
-import followChannelbyUser from './src/func/followChannelbyUser.js';
+import followChannelbyFid from './src/func/followChannelbyFid.js';
 
 const tokenJson = JSON.parse(fs.readFileSync('acc.json'));
 const selectProfile = async () => {
@@ -50,7 +50,7 @@ const listService = ['Follow Channel by User'];
          choices: listService,
       });
       if (service == 'Follow Channel by User') {
-         await followChannelbyUser(token, user);
+         await followChannelbyFid(token, user);
       }
    } catch (error) {
       console.log(error);
